@@ -18,3 +18,13 @@ ssh xx12345@hexhpc.th-deg.de
 Open a file using nano or vim:
 
 nano hello.cpp
+
+Add the following code:
+
+#include <iostream>
+
+int main() {
+    std::cout << "Hello from HEXHPC!" << std::endl;
+    return 0;
+}
+
