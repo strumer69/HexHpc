@@ -1,30 +1,50 @@
-# HexHpc
-### Experience working with linux cluster of THD Deggendorf.
+# HexHPC
 
+## Overview
 
-This is my first step working with the HEXHPC cluster at THD Deggendorf. Let’s start with a simple C++ “Hello World” example.
+HexHPC is a high-performance computing framework that provides tools and utilities for efficient computation.
 
-link to documentation: 
-https://hexhpc.th-deg.de/
+## C++ Code Section
 
-## 1. Login to the Cluster
+Here are some C++ code snippets:
 
-The cluster is accessible via SSH using your university LDAP account:
-
-ssh xx12345@hexhpc.th-deg.de
-
-## 2. Create a Simple C++ Program
-
-Open a file using nano or vim:
-
-nano hello.cpp
-
-Add the following code:
-
+```cpp
 #include <iostream>
 
 int main() {
-    std::cout << "Hello from HEXHPC!" << std::endl;
+    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
+```
 
+```cpp
+#include <vector>
+
+std::vector<int> bubbleSort(std::vector<int> arr) {
+    int n = arr.size();
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                std::swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+    return arr;
+}
+```
+
+## Installation
+
+To install HexHPC, run the following command:
+
+```
+$ git clone https://github.com/strumer69/HexHpc.git
+```
+
+## Usage
+
+To use HexHPC, navigate to the project directory and compile the code.
+
+## License
+
+This project is licensed under the MIT License.
