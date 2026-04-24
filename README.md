@@ -19,6 +19,10 @@ all:
 
 then in terminal --> make
 
+then you should see the created file ./hello that if you call that, you will see the result.
+
+
+
 
   
 
