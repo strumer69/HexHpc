@@ -35,6 +35,13 @@ cmake -S . -B build --> (-S .) which means Source directory is the current folde
 
 cmake --build build --> this command compiles the program. it goes to the build directory (generated from previous steps) and compile sthe code.
 
+after that by (./build/hello) we can run the executable.
+
+## Test MPI
+
+module load openmpi5
+
+nano mpi_hello.cpp --> refer to (mpi_hello.cpp)
 
 
 
