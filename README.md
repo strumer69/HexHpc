@@ -21,6 +21,21 @@ then in terminal --> make
 
 then you should see the created file ./hello that if you call that, you will see the result.
 
+## Cmake:
+
+mkdir cmake_test
+
+cd cmake_test
+
+Nano hello.cpp --> add the same code
+
+module load cmake
+
+cmake -S . -B build --> (-S .) which means Source directory is the current folder (.) and (-B build) mean  → “Put all build files in a folder called build”
+
+cmake --build build --> this command compiles the program. it goes to the build directory (generated from previous steps) and compile sthe code.
+
+
 
 
 
