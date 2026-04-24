@@ -43,6 +43,12 @@ module load openmpi5
 
 nano mpi_hello.cpp --> refer to (mpi_hello.cpp)
 
+then compile it: --> mpicxx mpi_hello.cpp -o mpi_hello
+
+Run the executable: --> mpirun -np 12 ./mpi_hello --> if -np=13 we will receive error. because the max number of slots (CPU core) in each node is 12.
+
+
+
 
 
 
