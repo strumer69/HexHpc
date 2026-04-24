@@ -41,11 +41,63 @@ after that by (./build/hello) we can run the executable.
 
 module load openmpi5
 
+mkdir mpi_test
+
 nano mpi_hello.cpp --> refer to (mpi_hello.cpp)
 
 then compile it: --> mpicxx mpi_hello.cpp -o mpi_hello
 
 Run the executable: --> mpirun -np 12 ./mpi_hello --> if -np=13 we will receive error. because the max number of slots (CPU core) in each node is 12.
+
+## MPI and cmake
+
+mkdir cmake_mpi --> and cd to it :) 
+
+The same code should exist and  CMakeLists.txt should be as follow:
+
+cmake_minimum_required(VERSION 3.10)
+
+project(MPIHello)
+
+find_package(MPI REQUIRED)
+
+add_executable(mpi_hello mpi_hello.cpp)
+
+target_link_libraries(mpi_hello MPI::MPI_CXX)
+
+ build:
+ 
+instead of (mkdir build --> cd build --> cmake ..) we can do use the following:
+
+cmake -S . -B build
+ 
+cmake --build build
+
+Run:
+
+mpirun -np 4 ./build/mpi_hello
+
+## Build LAMMPS with CMake
+
+git clone https://github.com/lammps/lammps.git
+
+cd lammps 
+
+mkdir build
+
+cd build
+
+The following steps tells CMake exactly how you want the software to be built before any actual compilation happens:
+
+ cmake ../cmake \
+
+  -D BUILD_MPI=ON \
+  
+  -D BUILD_OMP=ON \
+  
+  -D CMAKE_BUILD_TYPE=Release
+
+
 
 
 
