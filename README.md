@@ -1,5 +1,6 @@
 # HexHpc
-experience working with linux cluster of THD Deggendorf
+### Experience working with linux cluster of THD Deggendorf.
+
 
 This is my first step working with the HEXHPC cluster at THD Deggendorf. Let’s start with a simple C++ “Hello World” example.
 
@@ -12,3 +13,8 @@ The cluster is accessible via SSH using your university LDAP account:
 
 ssh xx12345@hexhpc.th-deg.de
 
+## 2. Create a Simple C++ Program
+
+Open a file using nano or vim:
+
+nano hello.cpp
