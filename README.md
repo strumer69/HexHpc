@@ -5,6 +5,9 @@ ssh xx12345@hexhpc.th-deg.de
 
 each student in THD has a specific user name. for example sm02969
 
+## hint 
+
+you can save the current loaded modules by command : module save shahram ---> then later use them by: --> module restore shahram
 
 ## make file:
 nano hello.cpp or you can use vim. --> code is at the repo named hello.cpp
@@ -96,6 +99,34 @@ The following steps tells CMake exactly how you want the software to be built be
   -D BUILD_OMP=ON \
   
   -D CMAKE_BUILD_TYPE=Release
+
+Then compile:
+
+While the previous commands we discussed were just configuring the project (making a plan), this one executes that plan.
+
+cmake --build . -j
+
+Output binary:
+
+./lmp
+
+Use a STANDARD benchmark case:
+
+cd ../bench
+
+Create a Slurm job script
+
+#!/bin/bash
+
+#SBATCH --job-name=lammps_bench
+
+#SBATCH --nodes=1
+
+#SBATCH --ntasks=8
+
+#SBATCH --time=00:10:00
+
+
 
 
 
