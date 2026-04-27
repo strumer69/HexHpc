@@ -126,6 +126,37 @@ Create a Slurm job script
 
 #SBATCH --time=00:10:00
 
+as we face few errors, we are going to use aptainer.
+
+## Aptainer
+
+module load apptainer-hpc/1.4.5
+
+Aptainer –version
+
+get CUDA container:
+
+apptainer pull docker://nvcr.io/nvidia/cuda:12.3.0-devel-ubuntu22.04
+
+it will create a .sif file --> cuda_12.3.0-devel-ubuntu22.04.sif
+
+If it does not work, clean the environment before running aptainer:
+
+unset APPTAINER_BINDPATH
+
+unset SINGULARITY_BINDPATH
+
+nvcc --version
+
+gcc --version
+
+You should see: --> CUDA installed --> (GCC ≤ 11 or 12)
+
+Then Compile cuda  code:
+
+nvcc hello_cuda.cu -o hello_cuda
+
+
 
 
 
