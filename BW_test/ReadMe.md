@@ -1,3 +1,9 @@
+# short action
+- compile 
+- mpicc -O3 pingpong_bw.c -o bandwidth 
+- run :  sbatch BW.sh
+- example result (you have to wait for a while):  Bandwidth = 0.11 GB/s
+- 
 # MPI InfiniBand Bandwidth Benchmark
 
 MPI-based benchmark to measure point-to-point communication performance between HPC compute nodes.
